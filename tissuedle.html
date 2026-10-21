@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tissuedle — gamePou</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="index.html"><span class="brand-icon">&gt;_</span> gamePou</a>
+        <div class="header-actions">
+          <div class="status mono"><span class="dot"></span> GAME ONLINE</div>
+          <button id="language-switch" class="language-switch mono" type="button">繁體中文</button>
+        </div>
+      </header>
+      <main class="game-page">
+        <a class="back mono" href="index.html">← BACK TO ARCADE</a>
+        <div class="eyebrow mono">PORTAL / 002</div>
+        <h1><em>Tissuedle</em></h1>
+        <div class="tissue-modes" role="group" aria-label="Game mode">
+          <button id="precision-mode" class="new-round mono" type="button" aria-pressed="true">PRECISION</button>
+          <button id="sharing-mode" class="new-round mono" type="button" aria-pressed="false">SHARE A TISSUE</button>
+        </div>
+        <p id="sharing-instructions" hidden>Keep dividing the same tissue to make pieces to share. Tear from top to bottom inside one piece. Touch an empty gap and the run ends.</p>
+        <p id="sharing-count" class="sharing-count" role="status" aria-live="polite" hidden></p>
+        <p id="precision-instructions">Tear the tissue into two equal pieces with a straight, vertical line.<br>Click and hold at the top edge, drag your mouse to the bottom edge, then release to tear.</p>
+        <div class="tear-panel">
+          <svg id="tissue-area" class="tear-canvas" viewBox="0 0 320 320" role="img" aria-label="Tissue to tear. Click and hold at the top edge, drag to the bottom edge, then release." tabindex="0">
+            <title>Tear the tissue into equal halves</title>
+            <defs>
+              <pattern id="tissue-photo" patternUnits="userSpaceOnUse" width="320" height="320">
+                <image href="assets/tissue-folded-v2.png" width="320" height="320" preserveAspectRatio="xMidYMid slice" />
+              </pattern>
+            </defs>
+            <path id="tissue-left" class="tissue-piece" d="M0 0H320V320H0Z" />
+            <path id="tissue-right" class="tissue-piece" d="" />
+            <g id="sharing-pieces"></g>
+            <g id="tear-fibers" aria-hidden="true"></g>
+            <path id="tear-line" fill="none" stroke="#b34e28" stroke-width="2" stroke-dasharray="4 3" />
+          </svg>
+        </div>
+        <p id="tissue-feedback" role="status" aria-live="polite">Aim for two equal halves. Balance, straightness and verticality affect your score. Score: 1–100, higher is better. Start anywhere on the top edge.</p>
+        <button id="reset-tissue" class="new-round mono" type="button">FRESH TISSUE ↻</button>
+        <br>
+        <a class="launch small-button mono" href="index.html">RETURN TO ARCADE →</a>
+      </main>
+      <footer class="mono">
+        <span>gamePou © 2026</span>
+        <span>YOUR NEXT ESCAPE AWAITS</span>
+      </footer>
+    </div>
+    <dialog id="results-dialog" class="help-dialog results-dialog" aria-labelledby="results-title">
+      <h2 id="results-title">Your results</h2>
+      <p id="results-data"></p>
+      <div class="results-actions">
+        <button id="results-replay" class="launch mono" type="button">PLAY AGAIN ↻</button>
+        <form method="dialog">
+          <button class="new-round mono" type="submit" autofocus>CLOSE →</button>
+        </form>
+      </div>
+    </dialog>
+    <script src="i18n.js"></script>
+    <script src="results.js"></script>
+    <script src="tissuedle.js"></script>
+  </body>
+</html>

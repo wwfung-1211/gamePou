@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta
+      name="description"
+      content="Enter gamePou. Enjoy little games in a warm, vintage playground."
+    >
+    <title>gamePou — Choose your next escape</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="index.html"><span class="brand-icon">&gt;_</span> gamePou</a>
+        <div class="header-actions">
+          <button id="about-button" class="new-round mono" type="button" aria-haspopup="dialog" aria-controls="about-dialog">ABOUT</button>
+          <button id="language-switch" class="language-switch mono" type="button">繁體中文</button>
+        </div>
+      </header>
+      <main class="arcade-home">
+        <div class="section-label mono"><span>01 / SELECT YOUR GAME</span><span>2 PORTALS · ENDLESS POSSIBILITY</span></div>
+        <section class="games" aria-label="Choose a game">
+          <article class="game">
+            <div class="art">
+              <span class="tag mono">PORTAL_001</span>
+              <a class="mahjong-tile" href="underscoredle.html" aria-label="Play Underscoredle">
+                <svg viewBox="0 0 80 100" aria-hidden="true">
+                  <path class="tile-mark" d="M20 28h40M20 50h40M20 72h40" />
+                </svg>
+              </a>
+              <span class="coords mono">[ 01 ]</span>
+            </div>
+            <div class="game-body">
+              <div class="game-title"><h2>Underscoredle</h2><span class="number mono">/ 001</span></div>
+              <p>Count the underscores. Enter your guess. Trust your eyes.</p>
+              <a class="launch mono" href="underscoredle.html">PLAY UNDERSCOREDLE <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="game purple">
+            <div class="art">
+              <span class="tag mono">PORTAL_002</span>
+              <a class="mahjong-tile tissue-tile" href="tissuedle.html" aria-label="Play Tissuedle">
+                <svg viewBox="0 0 80 100" aria-hidden="true">
+                  <path class="tile-paper" d="M16 20h48v60H16z" />
+                  <path class="tile-fold" d="M32 20v60M48 20v60M16 35h48M16 50h48M16 65h48" />
+                  <path class="tile-tear" d="m40 20-3 12 5 10-5 13 5 12-3 13" />
+                </svg>
+              </a>
+              <span class="coords mono">[ 02 ]</span>
+            </div>
+            <div class="game-body">
+              <div class="game-title"><h2>Tissuedle</h2><span class="number mono">/ 002</span></div>
+              <p>Tear a tissue into two halves. How even can you make them?</p>
+              <a class="launch mono" href="tissuedle.html">PLAY TISSUEDLE <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </section>
+        <div class="terminal mono"><b>guest@gamePou:~$</b> select a game to begin <span style="color:#a798ff">_</span></div>
+
+      </main>
+        <dialog id="about-dialog" class="help-dialog" aria-labelledby="about-title">
+          <div class="eyebrow mono">A LITTLE ABOUT gamePou</div>
+          <h2 id="about-title">Made for the joy of playing.</h2>
+          <p>gamePou is created by someone who loves playing and making games — from little logic puzzles to no-brainer games you can enjoy without overthinking.</p>
+          <p>It’s also a little love letter to Hong Kong, with a familiar cha chaan teng feel and a soft spot for mahjong tiles. Come in, take a break, and have a play.</p>
+          <form method="dialog">
+            <button class="launch mono" type="submit" autofocus>CLOSE →</button>
+          </form>
+        </dialog>
+      <footer class="mono">
+        <span>gamePou © 2026</span>
+        <span>BUILT FOR THE LOVE OF PLAY <span style="color:#a38cff">✳</span></span>
+      </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

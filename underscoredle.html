@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Underscoredle — gamePou</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="index.html"><span class="brand-icon">&gt;_</span> gamePou</a>
+        <div class="header-actions">
+          <div class="status mono"><span class="dot"></span> GAME ONLINE</div>
+          <button id="language-switch" class="language-switch mono" type="button">繁體中文</button>
+        </div>
+      </header>
+      <main class="game-page counting-game">
+        <a class="back mono" href="index.html">← BACK TO ARCADE</a>
+        <div class="eyebrow mono">PORTAL / 001</div>
+        <h1><em>Underscoredle</em></h1>
+        <button id="help-button" class="help-button mono" type="button" aria-label="How to play" aria-haspopup="dialog" aria-controls="how-to-play">?</button>
+        <dialog id="how-to-play" class="help-dialog" aria-labelledby="help-title">
+          <h2 id="help-title">How to play Underscoredle</h2>
+          <ol>
+            <li>Count the underscores in the string. Each round has between 1 and 30.</li>
+            <li>Use the single sample underscore as a size reference.</li>
+            <li>Enter your count and select “Check guess” or press Enter.</li>
+            <li>Use the higher or lower hints and keep guessing until you get it right.</li>
+          </ol>
+          <p>Select “New round” whenever you want a fresh string.</p>
+          <form method="dialog">
+            <button class="launch mono" type="submit" autofocus>GOT IT →</button>
+          </form>
+        </dialog>
+        <section class="count-panel" aria-label="Counting game">
+          <div class="mono count-caption">COUNT THE STRING · 1–30 UNDERSCORES</div>
+          <div
+            id="underscores"
+            class="underscore-string"
+            role="img"
+            aria-label="A string of underscores to count"
+          >
+          </div>
+          <div class="underscore-reference">
+            <span class="mono">SINGLE UNDERSCORE</span>
+            <span class="underscore-string underscore-sample" role="img" aria-label="One sample underscore">_</span>
+          </div>
+          <form id="guess-form">
+            <label for="guess" class="mono">YOUR GUESS</label>
+            <div class="guess-controls"><input id="guess" name="guess" type="number" min="1" max="30" step="1" required inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="feedback"><button class="launch mono" id="check" type="submit">CHECK GUESS →</button></div>
+          </form>
+          <p id="feedback" role="status" aria-live="polite">Take your time. Every underscore counts.</p>
+          <button id="new-round" class="new-round mono" type="button">NEW ROUND ↻</button>
+        </section>
+      </main>
+      <footer class="mono">
+        <span>gamePou © 2026</span>
+        <span>YOUR NEXT ESCAPE AWAITS</span>
+      </footer>
+    </div>
+    <dialog id="results-dialog" class="help-dialog results-dialog" aria-labelledby="results-title">
+      <h2 id="results-title">Your results</h2>
+      <p id="results-data"></p>
+      <div class="results-actions">
+        <button id="results-replay" class="launch mono" type="button">PLAY AGAIN ↻</button>
+        <form method="dialog">
+          <button class="new-round mono" type="submit" autofocus>CLOSE →</button>
+        </form>
+      </div>
+    </dialog>
+    <script src="i18n.js"></script>
+    <script src="results.js"></script>
+    <script src="underscoredle.js"></script>
+  </body>
+</html>
